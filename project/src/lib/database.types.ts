@@ -484,6 +484,65 @@ export interface Database {
           updated_at?: string
         }
       }
+      regions: {
+        Row: {
+          id: string
+          name: string
+          code: string | null
+          description: string | null
+          current_price: number
+          available_units: number
+          image_url: string | null
+          price_change_percent_24h: number
+          company_count: number
+          total_company_value: number
+          total_volume: number
+          total_revenue: number
+          is_active: boolean
+          created_at: string
+          updated_at: string
+          total_units: number
+          price_per_unit: number
+        }
+        Insert: {
+          id?: string
+          name: string
+          code?: string | null
+          description?: string | null
+          current_price: number
+          available_units: number
+          image_url?: string | null
+          price_change_percent_24h?: number
+          company_count?: number
+          total_company_value?: number
+          total_volume?: number
+          total_revenue?: number
+          is_active?: boolean
+          created_at?: string
+          updated_at?: string
+          total_units?: number
+          price_per_unit?: number
+        }
+        Update: {
+          id?: string
+          name?: string
+          code?: string | null
+          description?: string | null
+          current_price?: number
+          available_units?: number
+          image_url?: string | null
+          price_change_percent_24h?: number
+          company_count?: number
+          total_company_value?: number
+          total_volume?: number
+          total_revenue?: number
+          is_active?: boolean
+          created_at?: string
+          updated_at?: string
+          total_units?: number
+          price_per_unit?: number
+        }
+      }
     }
   }
 }

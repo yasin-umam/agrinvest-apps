@@ -1,5 +1,5 @@
 import { useAuth } from '../../contexts/AuthContext';
-import { Bell, LogOut, User, TrendingUp, TrendingDown, Shield, ArrowLeft, Menu, Search as SearchIcon, Leaf, Wallet, Briefcase, Receipt, Users, FileText, CheckSquare, Heart} from 'lucide-react';
+import { Bell, LogOut, User, TrendingUp, TrendingDown, Shield, Search as SearchIcon, Leaf, Wallet, Briefcase, Receipt, Users, FileText, CheckSquare, Heart} from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
 import { MobileSidebar } from './MobileSidebar';
@@ -17,7 +17,7 @@ interface HeaderProps {
   onBalanceModalChange?: (isOpen: boolean) => void;
 }
 
-export function Header({ onNavigate, currentPage, onSearchToggle, showMobileSearch, onSidebarToggle, onBalanceModalChange }: HeaderProps) {
+export function Header({ onNavigate, currentPage, onSearchToggle, onSidebarToggle, onBalanceModalChange }: HeaderProps) {
   const { profile, signOut, refreshProfile } = useAuth();
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showMobileSidebar, setShowMobileSidebar] = useState(false);

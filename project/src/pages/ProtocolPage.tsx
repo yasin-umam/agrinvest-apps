@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search, Plus, FileText, Shield, GitBranch, Activity, CheckCircle, Briefcase, Settings, Building, ArrowLeft, Calendar, Users, Target } from 'lucide-react';
+import { Search, Plus, FileText, Shield, GitBranch, Activity, CheckCircle, Briefcase, Settings, Building, } from 'lucide-react';
 
 interface Protocol {
   id: string;
@@ -133,7 +133,7 @@ const protocols: Protocol[] = [
   }
 ];
 
-export function ProtocolPage({ onMenuChange, onProtocolDetailChange, onViewDetail }: ProtocolPageProps) {
+export function ProtocolPage({ onMenuChange, onViewDetail }: ProtocolPageProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [showMenu, setShowMenu] = useState(false);
 

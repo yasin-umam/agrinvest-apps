@@ -40,8 +40,7 @@ export function BalanceTransactionModal({ transaction, onClose, onSuccess }: Bal
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) throw new Error('Not authenticated');
 
-      const { error } = await supabase
-        .from('balance_transactions')
+      const { error } = await (supabase.from('balance_transactions') as unknown as any)
         .update({
           status: 'approved',
           reviewed_by: user.id,
@@ -75,8 +74,7 @@ export function BalanceTransactionModal({ transaction, onClose, onSuccess }: Bal
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) throw new Error('Not authenticated');
 
-      const { error } = await supabase
-        .from('balance_transactions')
+      const { error } = await (supabase.from('balance_transactions') as unknown as any)
         .update({
           status: 'rejected',
           reviewed_by: user.id,

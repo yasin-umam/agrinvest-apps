@@ -32,8 +32,7 @@ export function TransactionReviewModal({ order, onClose, onSuccess }: Transactio
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) throw new Error('Not authenticated');
 
-      const { error: orderError } = await supabase
-        .from('orders')
+      const { error: orderError } = await (supabase.from('orders') as unknown as any)
         .update({
           status: 'completed',
           completed_at: new Date().toISOString(),
@@ -65,8 +64,7 @@ export function TransactionReviewModal({ order, onClose, onSuccess }: Transactio
       const { data: { user } } = await supabase.auth.getUser();
       if (!user) throw new Error('Not authenticated');
 
-      const { error: orderError } = await supabase
-        .from('orders')
+      const { error: orderError } = await (supabase.from('orders') as unknown as any)
         .update({
           status: 'cancelled',
           rejection_notes: rejectionNotes,
@@ -77,7 +75,7 @@ export function TransactionReviewModal({ order, onClose, onSuccess }: Transactio
 
       if (orderError) throw orderError;
 
-      await supabase.from('notifications').insert({
+      await (supabase.from('notifications') as unknown as any).insert({
         user_id: order.user_id,
         type: 'system',
         title: 'Transaksi Ditolak',
